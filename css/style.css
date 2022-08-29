@@ -46,12 +46,63 @@ h2 {
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
+.header {
+    display: grid;
+    grid-template-columns: 5fr 1fr 2fr;
+    margin-right: 70px;
+    width: 100%
+}
+.arrows {
+    margin-top: 25px;
+    min-width: 100px
+}
+.upgrade {
+    display: flex;
+    background-color: #212121;
+    width: fit-content;
+    margin-left: 200px;
+    border: 1px solid #6a6a6a
+}
+.user {
+    display: inline-block;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 250px;
+}
+.upgrade, .user {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.avatar {
+    display: inline-block;
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 2px;
+    filter: grayscale(100%);
+}
+.avatar-text {
+    display: inline-block;
+    padding-left: 45px;
+    padding-top: 10px;
+}
+.upgrade {
+    padding: 10px;
+}
 .main {
+    padding-top: 100px;
     grid-area: main;
     background-color: #1e1e1e
 }
 .header {
-    height: 100px
+    position: fixed;
+    height: max-content;
+    margin-left: 230px;
 }
 .category-title {
     height: 50px;
@@ -69,6 +120,16 @@ h2 {
     margin-left: 230px;
     margin-bottom: 60px
 }
+@media screen and (max-width: 900px) {
+    .arrow-2, .avatar-text, .upgrade {
+        display: none
+    }
+  }
+@media screen and (max-width: 900px) {
+    .avatar {
+        margin-left: 140px;
+    }
+  }
 @media screen and (max-width: 1900px) {
     .playlist-category {
         grid-template-columns: repeat( 7, 1fr );
@@ -100,11 +161,15 @@ h2 {
     width: 180px;
     aspect-ratio: 1.5/2;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 .pl-img {
     max-width: 100%;
     object-fit: cover;
-    border-radius: 100%;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 100px;
     padding: 15px
 }
 .pl-title {
@@ -128,13 +193,34 @@ h2 {
     background-color: #181818;
     border-top: 1px solid #282828;
 }
+.now-playing {
+    display: flex;
+}
+.artist-title-playing {
+    display: grid;
+    grid-template-rows: 50px 30px;
+}
+.title-playing {
+    margin-top: 30px;
+    color: white;
+    font-size: 15px;
+}
+.artist-playing {
+    color: #b3b3b3;
+    font-size: 10px
+}
+.save-to-library, .show-artwork {
+    margin: 25px 0px 0px 10px
+}
+.artwork {
+    margin: 15px
+}
 .transport {
     display: grid;
     grid-template-rows: 50px 1fr;
     text-align: center;
     padding-top: 15px;
 }
-
 .transport-selection, .play-button, .left-of-play, .right-of-play {
     display: inline-block;
 }
@@ -163,6 +249,17 @@ h2 {
     height: 2px;
     width: 100%;
     border: solid 2px #5e5e5e;
+}
+.volume {
+    display: flex;
+    justify-content: right;
+    padding: 30px 25px;
+}
+.device {
+    padding: 3px 0px 0px 6px
+}
+.vol-slider {
+    padding-top: 3px;
 }
 .spotify-logo--text {
     height: 40px;
